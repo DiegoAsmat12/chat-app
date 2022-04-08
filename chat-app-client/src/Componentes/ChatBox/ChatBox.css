@@ -1,0 +1,35 @@
+.chat-box{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    gap: 10px;
+    border-radius: 20px;
+    padding: 20px;
+    height: 100%;
+    overflow: auto;
+}
+
+.chat-box::-webkit-scrollbar-track{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.message-box{
+    width: fit-content;
+    min-width: 40px;
+    box-shadow: 2px 2px 4px #646464;
+    max-width: 60%;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.box-white{
+    background-color: white;
+}
+
+.box-blue{
+    background-color: var(--color-blue);
+}
+.right{
+    align-self: flex-end;
+}

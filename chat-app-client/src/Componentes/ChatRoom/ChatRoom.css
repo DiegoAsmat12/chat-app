@@ -1,0 +1,11 @@
+textarea{
+    resize: none;
+}
+
+.chat-room{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 10px;
+    width: 100%;
+}
