@@ -6,14 +6,16 @@ import ChatRoom from "./ChatRoom/ChatRoom";
 import FormularioRoom from "./FormularioRoom/FormularioRoom";
 import RoomSelector from "./RoomSelector/RoomSelector";
 
-const {token} = localStorage;
 
-const socket = io('http://localhost:8080',{query:{token}});
+const {token} = localStorage;
+console.log(token);
+let socket = io.connect('http://localhost:8080',{query:{token}});
 
 const Main = (props) => {
     const [rooms,setRooms] = useState([]);
     
     useEffect(()=> {
+        
         socket.emit("get_rooms",{});
         
         return () => {

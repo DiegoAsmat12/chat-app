@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import { Link } from "react-router-dom";
+
 const FormularioRegister = (props) => {
     const [user,setUser] = useState({
         username:'',
@@ -22,6 +23,7 @@ const FormularioRegister = (props) => {
             axios.post('http://localhost:8080/api/users/register',{username:user.username, email:user.email, password:user.password})
                 .then(response => {
                     localStorage.setItem('token',response.data.token);
+                    console.log(response.data.token);
                     setError("");
                     props.history.push("/");
                 })

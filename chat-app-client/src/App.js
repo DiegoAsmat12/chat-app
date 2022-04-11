@@ -4,7 +4,7 @@ import { Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import Main from './Componentes/Main';
 import FormularioLogin from './Componentes/FormularioLogin';
-import FormularioRegister from './FormularioRegister';
+import FormularioRegister from './Componentes/FormularioRegister';
 
 function App() {
   return (

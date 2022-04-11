@@ -23,6 +23,7 @@ const FormularioLogin = (props) => {
             axios.post('http://localhost:8080/api/users/login',{username:user.username, password:user.password})
                 .then(response => {
                     localStorage.setItem('token',response.data.token);
+                    console.log(localStorage.getItem('token'));
                     setError("");
                     props.history.push("/");
                 })
