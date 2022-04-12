@@ -11,8 +11,13 @@ const ChatRoom = (props) => {
     const [message,setMessage] = useState("");
     const [userId,setUserId] = useState("");
 
+
     useEffect(() => {
         socket.emit("join_room", {id});
+
+        return(() => {
+            socket.emit("leave_room",{id});
+        })
     },[id])
 
     useEffect(() => {

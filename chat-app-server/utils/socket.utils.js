@@ -35,12 +35,15 @@ const connection =io => {
                 socket.emit("retrieve_user", socket.decoded);
                 socket.join(data.id);
                 ChatRoomController.getRoomById(data,socket);
-
             }
             catch(err) {
                 console.log(err);
             }
         });
+
+        socket.on("leave_room", (data => {
+            socket.leave(data.id);
+        }))
 
         socket.on('get_rooms',() => {
             ChatRoomController.getRooms(socket);
